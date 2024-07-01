@@ -1,0 +1,214 @@
+{
+  "config": {
+    "configFile": "/home/basketo/Desktop/training/playwright.config.ts",
+    "rootDir": "/home/basketo/Desktop/training/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/basketo/Desktop/training/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/basketo/Desktop/training/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/basketo/Desktop/training/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/basketo/Desktop/training/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/basketo/Desktop/training/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/basketo/Desktop/training/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.45.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "weather.spec.ts",
+      "file": "weather.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Weather Website Navigation",
+          "file": "weather.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Navigate to Weather.com",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30398,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-07-01T16:33:28.086Z",
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30447,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2024-07-01T16:33:59.618Z",
+                      "attachments": []
+                    },
+                    {
+                      "workerIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30226,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 2,
+                      "startTime": "2024-07-01T16:34:31.116Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d5f1906f292cab0ebdcd-0b427f268a93a94a4777",
+              "file": "weather.spec.ts",
+              "line": 4,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-07-01T16:33:27.540Z",
+    "duration": 94307.548,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
