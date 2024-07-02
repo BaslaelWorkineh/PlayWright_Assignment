@@ -1,21 +1,33 @@
 const { test, expect } = require("@playwright/test");
 
-test.describe("Weather Website Navigation", () => {
-  test("Navigate to Weather.com", async ({ page }) => {
+// test.describe("Weather Website Navigation", () => {
+//   test("Navigate to Weather.com", async ({ page }) => {
+//     await page.goto("https://weather.com");
+//     await expect(page).toHaveTitle(/Weather/);
+//   });
+// });
+
+test.describe("Weather Search Functionality", () => {
+  test("Search weather in a specific city", async ({ page }) => {
     await page.goto("https://weather.com");
-    await expect(page).toHaveTitle(/Weather/);
+  
+    // Wait for the search input to be visible
+    const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]');
+    
+    // Fill the search input with the city name
+    await searchInput.fill("Addis Ababa");
+  
+    // Click the search button
+    await page.getByRole('option', { name: 'Addis Ababa, Ethiopia' }).click();
+  
+    // Wait for the search results to appear
+    await page.waitForSelector("text=Addis Ababa");
+
+    // Verify the result contains "Addis Ababa Weather"
+    await expect(page.locator('h1')).toContainText("Addis Ababa, Ethiopia");
   });
 });
 
-// test.describe("Weather Search Functionality", () => {
-//   test("Search weather in a specific city", async ({ page }) => {
-//     await page.goto("https://weather.com");
-//     await page.fill('input[name="search"]', "New York");
-//     await page.click('button[aria-label="Search"]');
-//     await page.waitForSelector("text=New York, NY Weather");
-//     await expect(page).toHaveText("New York, NY Weather");
-//   });
-// });
 
 // test("Verify weather results", async ({ page }) => {
 //   await page.goto("https://weather.com");

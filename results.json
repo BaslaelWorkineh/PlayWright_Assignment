@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -44,7 +44,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -58,7 +58,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -72,13 +72,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.45.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -90,111 +90,65 @@
       "specs": [],
       "suites": [
         {
-          "title": "Weather Website Navigation",
+          "title": "Weather Search Functionality",
           "file": "weather.spec.ts",
-          "line": 3,
+          "line": 10,
           "column": 6,
           "specs": [
             {
-              "title": "Navigate to Weather.com",
+              "title": "Search weather in a specific city",
               "ok": false,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 0,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30398,
+                      "status": "failed",
+                      "duration": 210745,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:12:16",
+                        "location": {
+                          "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
+                          "column": 16,
+                          "line": 12
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Search Functionality\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m   test(\u001b[32m\"Search weather in a specific city\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Wait for the search input to be visible\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"searchModalInputBox\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
                         {
                           "location": {
                             "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
                             "column": 16,
-                            "line": 5
+                            "line": 12
                           },
-                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
+                          "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Search Functionality\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m   test(\u001b[32m\"Search weather in a specific city\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Wait for the search input to be visible\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"searchModalInputBox\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:12:16\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-07-01T16:33:28.086Z",
-                      "attachments": []
-                    },
-                    {
-                      "workerIndex": 1,
-                      "status": "timedOut",
-                      "duration": 30447,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                            "column": 16,
-                            "line": 5
-                          },
-                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 1,
-                      "startTime": "2024-07-01T16:33:59.618Z",
-                      "attachments": []
-                    },
-                    {
-                      "workerIndex": 2,
-                      "status": "timedOut",
-                      "duration": 30226,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                            "column": 16,
-                            "line": 5
-                          },
-                          "message": "Error: page.goto: Test timeout of 30000ms exceeded.\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Website Navigation\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test(\u001b[32m\"Navigate to Weather.com\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Weather/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 8 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:5:16\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 2,
-                      "startTime": "2024-07-01T16:34:31.116Z",
-                      "attachments": []
+                      "startTime": "2024-07-02T06:52:32.313Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
+                        "column": 16,
+                        "line": 12
+                      }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "d5f1906f292cab0ebdcd-0b427f268a93a94a4777",
+              "id": "d5f1906f292cab0ebdcd-ba0469ef26006171c065",
               "file": "weather.spec.ts",
-              "line": 4,
+              "line": 11,
               "column": 3
             }
           ]
@@ -202,10 +156,14 @@
       ]
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
   "stats": {
-    "startTime": "2024-07-01T16:33:27.540Z",
-    "duration": 94307.548,
+    "startTime": "2024-07-02T06:52:31.736Z",
+    "duration": 213564.838,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,

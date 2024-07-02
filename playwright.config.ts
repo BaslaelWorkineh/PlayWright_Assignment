@@ -16,7 +16,7 @@ module.exports = {
   use: { browserName: 'webkit' },
   },
   ] ,// Global timeout for each test
-  timeout: 30000, // 30 seconds
+  timeout: 60000, // 60 seconds
   // Retry configuration
   retries: 2,
   // Test reporter
