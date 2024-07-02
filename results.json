@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 0,
+    "maxFailures": 1,
     "metadata": {
       "actualWorkers": 1
     },
@@ -44,7 +44,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 60000
+        "timeout": 0
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -58,7 +58,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 60000
+        "timeout": 0
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -72,13 +72,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 60000
+        "timeout": 0
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.45.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -87,55 +87,46 @@
       "file": "weather.spec.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "Weather search functionality",
-          "file": "weather.spec.ts",
-          "line": 5,
-          "column": 6,
-          "specs": [
+          "title": "Interact with elements",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "Search weather in a specific city",
-              "ok": true,
-              "tags": [],
-              "tests": [
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
                 {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 19422,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-07-02T11:34:48.986Z",
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 29004,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-07-02T16:19:56.552Z",
+                  "attachments": []
                 }
               ],
-              "id": "d5f1906f292cab0ebdcd-0e4e5cab915d79c1163f",
-              "file": "weather.spec.ts",
-              "line": 6,
-              "column": 3
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "d5f1906f292cab0ebdcd-3c79dcdf44bf775e7eb7",
+          "file": "weather.spec.ts",
+          "line": 59,
+          "column": 1
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-07-02T11:34:48.136Z",
-    "duration": 20996.23,
+    "startTime": "2024-07-02T16:19:56.007Z",
+    "duration": 31194.305,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
