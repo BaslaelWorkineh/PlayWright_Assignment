@@ -9,7 +9,7 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
       "actualWorkers": 1
     },
@@ -44,7 +44,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 60000
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -58,7 +58,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 60000
       },
       {
         "outputDir": "/home/basketo/Desktop/training/test-results",
@@ -72,13 +72,13 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 60000
       }
     ],
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.45.0",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
@@ -90,65 +90,41 @@
       "specs": [],
       "suites": [
         {
-          "title": "Weather Search Functionality",
+          "title": "Weather search functionality",
           "file": "weather.spec.ts",
-          "line": 10,
+          "line": 5,
           "column": 6,
           "specs": [
             {
               "title": "Search weather in a specific city",
-              "ok": false,
+              "ok": true,
               "tags": [],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 60000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
                       "workerIndex": 0,
-                      "status": "failed",
-                      "duration": 210745,
-                      "error": {
-                        "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:12:16",
-                        "location": {
-                          "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                          "column": 16,
-                          "line": 12
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Search Functionality\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m   test(\u001b[32m\"Search weather in a specific city\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Wait for the search input to be visible\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"searchModalInputBox\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                            "column": 16,
-                            "line": 12
-                          },
-                          "message": "Error: page.goto: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- navigating to \"https://weather.com/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 10 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m\"Weather Search Functionality\"\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 11 |\u001b[39m   test(\u001b[32m\"Search weather in a specific city\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://weather.com\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m   \n \u001b[90m 14 |\u001b[39m     \u001b[90m// Wait for the search input to be visible\u001b[39m\n \u001b[90m 15 |\u001b[39m     \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"searchModalInputBox\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:12:16\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 19422,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-07-02T06:52:32.313Z",
-                      "attachments": [],
-                      "errorLocation": {
-                        "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                        "column": 16,
-                        "line": 12
-                      }
+                      "startTime": "2024-07-02T11:34:48.986Z",
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "d5f1906f292cab0ebdcd-ba0469ef26006171c065",
+              "id": "d5f1906f292cab0ebdcd-0e4e5cab915d79c1163f",
               "file": "weather.spec.ts",
-              "line": 11,
+              "line": 6,
               "column": 3
             }
           ]
@@ -156,17 +132,13 @@
       ]
     }
   ],
-  "errors": [
-    {
-      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
-    }
-  ],
+  "errors": [],
   "stats": {
-    "startTime": "2024-07-02T06:52:31.736Z",
-    "duration": 213564.838,
-    "expected": 0,
+    "startTime": "2024-07-02T11:34:48.136Z",
+    "duration": 20996.23,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

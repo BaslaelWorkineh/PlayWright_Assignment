@@ -1,93 +1,92 @@
 const { test, expect } = require("@playwright/test");
+const { chromium } = require("playwright");
 
-// test.describe("Weather Website Navigation", () => {
-//   test("Navigate to Weather.com", async ({ page }) => {
-//     await page.goto("https://weather.com");
-//     await expect(page).toHaveTitle(/Weather/);
-//   });
-// });
-
-test.describe("Weather Search Functionality", () => {
-  test("Search weather in a specific city", async ({ page }) => {
-    await page.goto("https://weather.com");
-  
-    // Wait for the search input to be visible
-    const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]');
+//Navigate, Search, Verify
+test.describe('Weather search functionality', () => {
+  test('Search weather in a specific city', async ({ page }) => {
+    await page.goto('https://www.openweathermap.org/');
     
-    // Fill the search input with the city name
-    await searchInput.fill("Addis Ababa");
-  
-    // Click the search button
-    await page.getByRole('option', { name: 'Addis Ababa, Ethiopia' }).click();
-  
-    // Wait for the search results to appear
-    await page.waitForSelector("text=Addis Ababa");
-
-    // Verify the result contains "Addis Ababa Weather"
-    await expect(page.locator('h1')).toContainText("Addis Ababa, Ethiopia");
+    const searchInput = await page.getByPlaceholder('Search city');
+    await searchInput.fill('Addis Ababa');
+    
+    await page.getByRole('button', { name: 'Search' }).click();
+    
+    await page.waitForSelector('text=Addis Ababa');
+    await expect(page.getByText('Addis Ababa, ET')).toBeVisible();
   });
 });
 
+// test('Handle multiple browser contexts more efficiently', async () => {
+//   const browser = await chromium.launch({ headless: false });
 
-// test("Verify weather results", async ({ page }) => {
-//   await page.goto("https://weather.com");
-//   await page.fill('input[name="search"]', "New York");
-//   await page.click('button[aria-label="Search"]');
-//   await page.waitForSelector("text=New York, NY Weather");
-//   const temperature = await page.textContent(
-//     ".CurrentConditions--tempValue--3KcTQ"
-//   );
-//   expect(parseInt(temperature)).toBeGreaterThan(-50);
-// });
-
-// const { chromium } = require("playwright");
-
-// test("Multiple browser contexts", async () => {
-//   const browser = await chromium.launch();
 //   const context1 = await browser.newContext();
 //   const context2 = await browser.newContext();
 
 //   const page1 = await context1.newPage();
-//   await page1.goto("https://weather.com");
-//   await page1.fill('input[name="search"]', "New York");
-//   await page1.click('button[aria-label="Search"]');
-
 //   const page2 = await context2.newPage();
-//   await page2.goto("https://weather.com");
-//   await page2.fill('input[name="search"]', "Los Angeles");
-//   await page2.click('button[aria-label="Search"]');
+
+//   async function searchCity(page, cityName, fullCityName) {
+//     await page.goto('https://weather.com', { timeout: 120000 });
+//     const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]', { timeout: 10000 });
+//     await searchInput.fill(cityName);
+//     await page.waitForSelector(`role=option[name='${fullCityName}']`, { timeout: 10000 });
+//     await page.getByRole('option', { name: fullCityName }).click();
+//     await page.waitForSelector(`text=${cityName}`, { timeout: 10000 });
+//     const headerText = await page.locator('h1').textContent();
+//     return headerText;
+//   }
+
+//   const [result1, result2] = await Promise.all([
+//     searchCity(page1, 'Adama,Oromia,Ethiopia', 'Adama, Oromia, Ethiopia'),
+//     searchCity(page2, 'Addis Ababa, Ethiopia', 'Addis Ababa, Ethiopia'),
+//   ]);
+
+//   expect(result1).toContain('Adama, Oromia, Ethiopia');
+//   expect(result2).toContain('Addis Ababa, Ethiopia');
 
 //   await browser.close();
 // });
 
+
+// // Interact with elements (click, type), Take Screenshot, Generate pdf
 // test("Interact with elements", async ({ page }) => {
 //   await page.goto("https://weather.com");
-//   await page.fill('input[name="search"]', "San Francisco");
-//   await page.click('button[aria-label="Search"]');
-//   await page.waitForSelector("text=San Francisco, CA Weather");
+
+//   const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]');
+//   await searchInput.focus();
+//   await page.keyboard.type("Addis Ababa", { delay: 100 }); 
+
+//   await page.getByRole('option', { name: 'Addis Ababa, Ethiopia' }).click();
+
+//   await page.waitForSelector("text=Addis Ababa");
+//   await page.screenshot({ path: "reports/Addis_Ababa_Weather.png" });
+
+//   await page.emulateMedia({ media: 'screen' });
+//   await page.pdf({ path: 'reports/Addis_Ababa_Weather.pdf' });
 // });
 
-// test("Take screenshot of results", async ({ page }) => {
-//   await page.goto("https://weather.com");
-//   await page.fill('input[name="search"]', "Chicago");
-//   await page.click('button[aria-label="Search"]');
-//   await page.waitForSelector("text=Chicago, IL Weather");
-//   await page.screenshot({ path: "reports/chicago-weather.png" });
-// });
 
-// test('Mock API responses', async ({ page }) => {
-//     await page.route('**/api/weather', route => {
-//       route.fulfill({
-//         contentType: 'application/json',
-//         body: JSON.stringify({ temperature: '70°F', conditions: 'Sunny' }),
-//       });
-//     });
-//     await page.goto('https://weather.com');
-//     await page.fill('input[name="search"]', 'Miami');
-//     await page.click('button[aria-label="Search"]');
-//     const temperature = await page.textContent('.CurrentConditions--tempValue--3KcTQ');
-//     expect(temperature).toBe('70°F');
+// //Mock API response and extract information
+// test('Mock API response and extract weather information', async ({ page }) => {
+//   await page.route('https://weather.com/api/v1/location/*', async (route) => {
+//     const data = [{location: 'Addis Ababa', weather: 'Sunny', temperature:'37deg'}]
+//     await route.fulfill({ data });
 //   });
+
+//   await page.goto('https://weather.com');
+
+//   const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]');
+//   await searchInput.fill('Addis Ababa');
+//   await page.getByRole('option', { name: 'Addis Ababa, Ethiopia' }).click();
+//   await page.waitForSelector('text=Addis Ababa');
+
+//   await expect(page.getByText('Sunny')).toBeVisible();
+
+//   await page.screenshot({ path: 'reports/Addis_Ababa_Weather2.png' });
+//   await page.emulateMedia({ media: 'screen' });
+//   await page.pdf({ path: 'reports/Addis_Ababa_Weather2.pdf' });
+// });
+
 
   
 // test("Extract weather information", async ({ page }) => {
@@ -116,9 +115,21 @@ test.describe("Weather Search Functionality", () => {
 //   console.log(weatherData);
 // });
 
-// test("Implement waiting strategies", async ({ page }) => {
-//   await page.goto("https://weather.com");
-//   await page.fill('input[name="search"]', "Austin");
-//   await page.click('button[aria-label="Search"]');
-//   await page.waitForSelector("text=Austin, TX Weather", { timeout: 10000 });
+// // Implement waiting strategies and handling timeouts
+// test('Implement advanced waiting strategies', async ({ page }) => {
+//   test.slow();
+//   await page.goto('https://weather.com', { timeout: 30000 });
+
+//   const searchInput = await page.waitForSelector('[data-testid="searchModalInputBox"]', { timeout: 20000 });
+//   await expect(searchInput).toBeVisible();
+
+//   await searchInput.focus();
+//   await page.keyboard.type('Addis Ababa', { delay: 100 });
+
+//   const cityOption = await page.waitForSelector('text=Addis Ababa, Ethiopia', { timeout: 10000 });
+//   await cityOption.click();
+
+//   const cityTitle = await page.waitForSelector('text=Addis Ababa', { timeout: 10000 });
+//   await expect(cityTitle).toBeVisible();
+
 // });
