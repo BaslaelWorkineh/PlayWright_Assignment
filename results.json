@@ -103,106 +103,106 @@
                 {
                   "workerIndex": 0,
                   "status": "failed",
-                  "duration": 29285,
+                  "duration": 11742,
                   "error": {
-                    "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n",
-                    "stack": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14",
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40",
                     "location": {
                       "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                      "column": 14,
-                      "line": 109
+                      "column": 40,
+                      "line": 110
                     },
-                    "snippet": "\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                        "column": 14,
-                        "line": 109
+                        "column": 40,
+                        "line": 110
                       },
-                      "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14\u001b[22m"
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n\n\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-07-02T17:35:46.214Z",
+                  "startTime": "2024-07-02T18:15:58.816Z",
                   "attachments": [],
                   "errorLocation": {
                     "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                    "column": 14,
-                    "line": 109
+                    "column": 40,
+                    "line": 110
                   }
                 },
                 {
                   "workerIndex": 1,
                   "status": "failed",
-                  "duration": 23968,
+                  "duration": 11071,
                   "error": {
-                    "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n",
-                    "stack": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14",
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40",
                     "location": {
                       "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                      "column": 14,
-                      "line": 109
+                      "column": 40,
+                      "line": 110
                     },
-                    "snippet": "\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                        "column": 14,
-                        "line": 109
+                        "column": 40,
+                        "line": 110
                       },
-                      "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14\u001b[22m"
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n\n\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 1,
-                  "startTime": "2024-07-02T17:36:16.231Z",
+                  "startTime": "2024-07-02T18:16:11.863Z",
                   "attachments": [],
                   "errorLocation": {
                     "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                    "column": 14,
-                    "line": 109
+                    "column": 40,
+                    "line": 110
                   }
                 },
                 {
                   "workerIndex": 2,
                   "status": "failed",
-                  "duration": 24220,
+                  "duration": 12790,
                   "error": {
-                    "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n",
-                    "stack": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14",
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40",
                     "location": {
                       "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                      "column": 14,
-                      "line": 109
+                      "column": 40,
+                      "line": 110
                     },
-                    "snippet": "\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                        "column": 14,
-                        "line": 109
+                        "column": 40,
+                        "line": 110
                       },
-                      "message": "TimeoutError: page.waitForSelector: Timeout 20000ms exceeded.\nCall log:\n  \u001b[2m- waiting for locator('text=Sunny') to be visible\u001b[22m\n\n\n\u001b[0m \u001b[90m 107 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 108 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m\"text=Sunny\"\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m20000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Sunny\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_Weather2.png\"\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:109:14\u001b[22m"
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('Rain')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Rain')\u001b[22m\n\n\n\u001b[0m \u001b[90m 108 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m\"https://api.openweathermap.org\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 109 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"Rain\"\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({ path\u001b[33m:\u001b[39m \u001b[32m\"reports/Addis_Ababa_API.png\"\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m\u001b[0m\n\n\u001b[2m    at /home/basketo/Desktop/training/tests/weather.spec.ts:110:40\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 2,
-                  "startTime": "2024-07-02T17:36:40.918Z",
+                  "startTime": "2024-07-02T18:16:24.462Z",
                   "attachments": [],
                   "errorLocation": {
                     "file": "/home/basketo/Desktop/training/tests/weather.spec.ts",
-                    "column": 14,
-                    "line": 109
+                    "column": 40,
+                    "line": 110
                   }
                 }
               ],
@@ -219,8 +219,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-07-02T17:35:45.649Z",
-    "duration": 79730.579,
+    "startTime": "2024-07-02T18:15:57.936Z",
+    "duration": 39752.097,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,

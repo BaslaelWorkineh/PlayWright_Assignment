@@ -78,41 +78,44 @@ test("Interact with elements", async ({ page, browserName }) => {
 });
 
 /*Mock API response and extract weather information
+I did it exacly like the documentation and it didn't work, I don't know why
 */
 test("Mock API response and extract weather information", async ({ page, browserName }) => {
-  const mockApiResponse = {
+  const AAData = {
     lat: 9.03,
     lon: 38.74,
-    current: {
-      temp: 37,
-      weather: [{ description: "Sunny" }]
-    },
-    timezone: "Africa/Addis_Ababa",
-    name: "Addis Ababa"
   };
   const API_key = 'cde8a5a5fd6f80091f9b9d12ecdf4c09';
 
-  const { lat, lon } = mockApiResponse;
+  const { lat, lon } = AAData;
 
   await page.route(
     `/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`,
     async (route) => {
-      await route.fulfill({
-        contentType: "application/json",
-        body: JSON.stringify(mockApiResponse),
-      });
+     const json = [{
+      lat: 9.03,
+      lon: 38.74,
+      current: {
+        temp: 37,
+        weather: [{ main: "Rain" }]
+      },
+      timezone: "Africa/Addis_Ababa",
+      name: "Addis Ababa"
+    }]
+    await route.fullfill({json})
     }
   );
 
   await page.goto("https://api.openweathermap.org");
 
-  await expect(page.getByText("Sunny")).toBeVisible();
+  //change the weather to Rain and check if it is visible 
+  await expect(page.getByText("humid")).toBeVisible();
 
-  await page.screenshot({ path: "reports/Addis_Ababa_Weather2.png" });
+  await page.screenshot({ path: "reports/Addis_Ababa_API.png" });
 
   if (browserName === 'chromium') {
     await page.emulateMedia({ media: 'screen' });
-    await page.pdf({ path: 'reports/Addis_Ababa_Weather.pdf' });
+    await page.pdf({ path: 'reports/API.pdf' });
   }
 });
 
