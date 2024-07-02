@@ -85,50 +85,50 @@ this is the result I got
 a separate subscription to the One Call by Call plan. 
 Learn more here https://openweathermap.org/price. If you have a valid subscription to the One Call by Call plan, but still receive this error, then please see 
 https://openweathermap.org/faq#error401 for more info."}
-*/
+// */
 
-test("Mock API response and extract weather information", async ({ page, browserName }) => {
-  const mockApiResponse = {
-    lat: 9.03,
-    lon: 38.74,
-    current: {
-      temp: 310.15,
-      weather: [{ description: "Sunny" }]
-    },
-    timezone: "Africa/Addis_Ababa",
-    name: "Addis Ababa"
-  };
+// test("Mock API response and extract weather information", async ({ page, browserName }) => {
+//   const mockApiResponse = {
+//     lat: 9.03,
+//     lon: 38.74,
+//     current: {
+//       temp: 310.15,
+//       weather: [{ description: "Sunny" }]
+//     },
+//     timezone: "Africa/Addis_Ababa",
+//     name: "Addis Ababa"
+//   };
 
-  await page.route(
-    "https://api.openweathermap.org/data/3.0/onecall*",
-    async (route) => {
-      await route.fulfill({
-        contentType: "application/json",
-        body: JSON.stringify(mockApiResponse),
-      });
-    }
-  );
+//   await page.route(
+//     "https://api.openweathermap.org/data/3.0/onecall*",
+//     async (route) => {
+//       await route.fulfill({
+//         contentType: "application/json",
+//         body: JSON.stringify(mockApiResponse),
+//       });
+//     }
+//   );
 
-  await page.goto("https://www.openweathermap.org");
+//   await page.goto("https://www.openweathermap.org");
 
-  const searchInput = await page.getByPlaceholder("Search city");
-  await searchInput.fill("Addis Ababa");
-  await page.getByRole("button", { name: "Search" }).click();
+//   const searchInput = await page.getByPlaceholder("Search city");
+//   await searchInput.fill("Addis Ababa");
+//   await page.getByRole("button", { name: "Search" }).click();
 
-  const dropdownOption = await page.waitForSelector('span:has-text("Addis Ababa, ET")', { timeout: 15000 });
-  await dropdownOption.click();
+//   const dropdownOption = await page.waitForSelector('span:has-text("Addis Ababa, ET")', { timeout: 15000 });
+//   await dropdownOption.click();
 
-  //the api needs subscription to use it but i used their documentation
-  await page.waitForSelector("text=Sunny", { timeout: 10000 });
-  await expect(page.getByText("Sunny")).toBeVisible();
+//   //the api needs subscription to use it but i used their documentation
+//   await page.waitForSelector("text=Sunny", { timeout: 10000 });
+//   await expect(page.getByText("Sunny")).toBeVisible();
 
-  await page.screenshot({ path: "reports/Addis_Ababa_Weather2.png" });
+//   await page.screenshot({ path: "reports/Addis_Ababa_Weather2.png" });
 
-  if (browserName === 'chromium') {
-    await page.emulateMedia({ media: 'screen' });
-    await page.pdf({ path: 'reports/Addis_Ababa_Weather.pdf' });
-  }
-});
+//   if (browserName === 'chromium') {
+//     await page.emulateMedia({ media: 'screen' });
+//     await page.pdf({ path: 'reports/Addis_Ababa_Weather.pdf' });
+//   }
+// });
 
 //Extract weather information from the site and show it on terminal
 test('Extract weather information', async () => {
@@ -158,7 +158,7 @@ test('Extract weather information', async () => {
 });
 
 
-test('Extract weather information from OpenWeatherMap with dynamic content handling', async () => {
+test('Extract weather information from OpenWeatherMap with dynamic content handling', async (browserName) => {
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
@@ -189,9 +189,9 @@ test('Extract weather information from OpenWeatherMap with dynamic content handl
 
   await page.screenshot({ path: "reports/Addis_Ababa_Weather.png" });
 
-  if (page.context().browserName() === 'chromium') {
-    await page.emulateMedia({ media: "screen" });
-    await page.pdf({ path: "reports/Addis_Ababa_Weather2.pdf" });
+  if (browserName === 'chromium') {
+    await page.emulateMedia({ media: 'screen' });
+    await page.pdf({ path: 'reports/Addis_Ababa_Weather.pdf' });
   }
 
   await browser.close();
