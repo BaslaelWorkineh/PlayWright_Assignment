@@ -84,6 +84,7 @@ test("Mock API response and extract weather information", async ({ page, browser
     lat: 9.03,
     lon: 38.74,
   };
+  //I exposed the API Key to save you time not because I am stupid :)
   const API_key = 'cde8a5a5fd6f80091f9b9d12ecdf4c09';
 
   const { lat, lon } = AAData;
